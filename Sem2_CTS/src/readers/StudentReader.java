@@ -6,14 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Student;
 
-public class StudentReader {
+public class StudentReader extends Aplicant{
+	//dc returnam un list de student si nu un array de stud?
+	//deoarece ne folo de tipul abstract
+	//tipul abstract de la student-> aplicant
+	//trebuie sa retuenam o lista de studenti, nu de aplicanti 
 
-	public static List<Student> readStudents(String file) throws FileNotFoundException, NumberFormatException {
+	public  List<Aplicant> readAplicants(String file) throws FileNotFoundException, NumberFormatException {
 		Scanner input = new Scanner(new File(file));
 		input.useDelimiter(",|\n");
-		List<Student> studenti = new ArrayList<Student>();
+		List<Aplicant> studenti = new ArrayList<Aplicant>();
 
 		while (input.hasNext()) {
 			String nume = input.next();
