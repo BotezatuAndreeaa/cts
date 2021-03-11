@@ -16,8 +16,8 @@ public class Program {
 	//pt metode si functii ->verbe
 	
 	public static List<Aplicant> readAplicant(String fisier, StudentReader studentReader) throws NumberFormatException,FileNotFoundException {
-		//principiul liscov: implemnetarea astfel incat daca inlocuim cu orice ob al clasei fiu sa avem aceasi implementare
-	return studentReader.readAplicants(fisier);
+		//principiul liskov: implemnetarea astfel incat daca inlocuim cu orice ob al clasei fiu sa avem aceasi implementare
+	return studentReader.readAplicants();
 	
 	}
 
@@ -27,7 +27,7 @@ public class Program {
 		
 		List<Aplicant> listaAplicanti;
 		try {
-			listaAplicanti=readAplicant("studenti.txt", new StudentReader());
+			listaAplicanti=readAplicants(new StudentReader("studenti.txt"));
 			for(Aplicant aplicant:listaAplicanti)
 				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {
