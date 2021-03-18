@@ -2,6 +2,7 @@ package ro.acs.cts;
 
 import ro.ase.cts.clase.DepartamentFinanciar;
 import ro.ase.cts.clase.DepartamentFinanciarEager;
+import ro.ase.cts.clase.Manager;
 
 public class Main {
 
@@ -24,6 +25,12 @@ public class Main {
 		System.out.println(primulDepartamentFinanciarLazzy.toString());
 		System.out.println(alDoileaDepartamentFinanciarLazzy.toString());
 		
+		Manager primulManager= Manager.getInstance("Matei", 34, 3700);
+		Manager alDoileaManager= Manager.getInstance("Cristian", 42, 3800);
+		
+		System.out.println(primulManager.toString());
+		System.out.println(alDoileaManager.toString());
 	}
+	
 
 }
